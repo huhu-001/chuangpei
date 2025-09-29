@@ -1,18 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ConfigProvider } from 'antd'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
-import OrderListPage from './pages/pc/OrderListPage'
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pc/order-list" element={<OrderListPage />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <ConfigProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </ConfigProvider>
   )
 }
 
